@@ -33,3 +33,21 @@ body {
 }
 h1 { color: #2c3e50; border-bottom: 2px solid #2c3e50; }
 p { font-size: 18px; color: #555; }
+.about-section {
+    display: flex; /* Бұл сурет пен мәтінді қатар қояды */
+    align-items: center; /* Ортасынан теңестіру */
+    gap: 30px; /* Сурет пен мәтін арасындағы бос орын */
+}
+
+.text-content {
+    flex: 2; /* Мәтінге көп орын беру */
+}
+
+.image-content {
+    flex: 1; /* Суретке орын беру */
+}
+
+.image-content img {
+    max-width: 100%;
+    border-radius: 10px;
+}
