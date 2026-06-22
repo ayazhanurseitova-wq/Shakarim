@@ -1,0 +1,317 @@
+/* --- Негізгі айнымалылар (түстер мен қаріптер) --- */
+:root {
+    --bg-color: #f7f7f7; /* Өте жұмсақ ашық сұр фон */
+    --text-color: #2c2c2c; /* Көзге түспейтін қою сұр мәтін */
+    --accent-color: #555555;
+    --border-radius: 18px; /* Жұмсақ бұрыштар */
+    --font-main: 'Lora', serif; /* Негізгі мәтін үшін (тарихи стиль) */
+    --font-heading: 'Nunito', sans-serif; /* Тақырыптар үшін жұмсақ қаріп */
+}
+
+/* --- Базалық стильдер --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.8; /* Жол арақашықтығы (оқуға ыңғайлы) */
+    font-size: 17px;
+}
+
+h1, h2, h3, nav a, .btn {
+    font-family: var(--font-heading);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Шапка (Header) --- */
+header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Жұмсақ көлеңке */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #888;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--text-color);
+}
+
+/* --- Басты бет (Hero section) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 0;
+    gap: 40px;
+}
+
+.hero-text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+}
+
+.hero-text p {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #444;
+}
+
+/* --- Батырмалар --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--text-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px; /* Дөңгелек батырма */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* --- Суреттер (Ақ-қара және дөңгеленген) --- */
+.rounded-img {
+    border-radius: var(--border-radius);
+    /* ЕҢ БАСТЫСЫ: Барлық суреттерді ақ-қара қылатын фильтр */
+    filter: grayscale(100%); 
+    transition: filter 0.5s ease, transform 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Тышқанды апарғанда аздап түс кіреді (эффект) */
+.rounded-img:hover {
+    filter: grayscale(40%);
+    transform: scale(1.02);
+}
+
+.hero-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover; /* Сурет қисаймас үшін */
+    border-radius: 50%; /* Басты сурет толық дөңгелек */
+}
+
+/* --- Цитата бөлімі --- */
+.quote-section {
+    padding: 40px 0;
+    text-align: center;
+}
+
+blockquote {
+    font-size: 24px;
+    font-style: italic;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 16px;
+    margin-top: 15px;
+    font-family: var(--font-heading);
+    color: #888;
+}
+
+/* --- Мәтін беттері (Өмірбаяны) --- */
+.content-page {
+    padding: 50px 20px;
+}
+
+.content-page h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.content-page h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: var(--text-color);
+    margin: 15px auto 0;
+}
+
+.text-block {
+    margin-bottom: 50px;
+}
+
+.text-block h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.text-block p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.float-right {
+    float: right;
+    width: 300px;
+    margin: 0 0 20px 30px;
+}
+
+.float-left {
+    float: left;
+    width: 300px;
+    margin: 0 30px 20px 0;
+}
+
+/* --- Карточкалар (Шығармашылығы) --- */
+.intro-text {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: transform 0.3s;
+    border: 1px solid #eee;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- Подвал (Footer) --- */
+footer {
+    background-color: #fff;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 50px;
+    color: #888;
+    border-top: 1px solid #eee;
+}
+
+/* --- Жоғарыға көтерілу батырмасы --- */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--text-color);
+    color: #fff;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none; /* JS арқылы қосылады */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+/* --- Мобильді бейімділік --- */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-img {
+        width: 250px;
+        height: 250px;
+    }
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        margin: 0 10px;
+    }
+    .float-right, .float-left {
+        float: none;
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+}
+/* Убираем лишние отступы */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', sans-serif; /* Чистый шрифт */
+    background-color: #fdfdfd; /* Почти белый цвет фона */
+    color: #333;
+}
+
+/* Меню (как просили в задании) */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 30px; /* Расстояние между ссылками */
+    border-bottom: 1px solid #eee;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    text-transform: uppercase; /* Заглавные буквы */
+    font-size: 14px;
+}
+
+/* Заголовок по центру */
+h1 {
+    font-size: 40px;
+    letter-spacing: -1px; /* Стильное сближение букв */
+    margin-top: 50px;
+}
